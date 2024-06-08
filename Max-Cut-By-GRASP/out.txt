@@ -1,0 +1,364 @@
+Grasp:                  
+-------
+	Three methods for constructing a solution were employed:
+	1. The randomization method.
+	2. The simple greedy method.
+	3. The semi-greedy method.
+	
+	After obtaining a solution using one of these methods, a local search was implemented to further 
+	enhance the solution quality.
+	
+Randomization method:
+---------------------
+	A node was selected randomly and assigned to one of the sets, thereby creating a solution.
+
+Simple greedy method:
+---------------------
+	First, select an edge with a higher weight and assign its nodes to two different sets. Then, for a node 
+	that hasn't been assigned to any set yet, determine whether placing it in set one or two would result 
+	in a greater increase in the solution. If placing it in set one results in a larger solution increase, 
+	assign the node to set one; otherwise, assign it to set two.
+
+Semi-greedy method:
+-------------------
+	The semi-greedy method is similar to the greedy method, with the main difference occurring in one 	
+	specific scenario. Instead of directly inserting a node into a set, the semi-greedy approach involves 
+	calculating the greedy function values for all unassigned nodes. Then, by selecting either cardinality 
+	or alpha at random, the most promising node is determined and assigned to a set.
+ 	
+ Local Search:
+ -------------
+	Upon obtaining a solution, a local search was conducted to improve its quality. This involved 
+	evaluating each node to determine whether switching its set assignment would lead to an increase in 
+	value. Both the first solution and the best solution were utilized for this process, with their 
+	selection being random.
+
+
+Here is the output of my code based on the provided input for (set1):
+
+----------------------------------------------------------------------------------------------------------------
+Prob	n	m	construction	     Local Search    Local Search	Grasp	      Best    knownBest
+ No.			of a solution	     avg best val    avg iteration	iteration     Value    value
+-----------------------------------------------------------------------------------------------------------------
+			simple rand		11314.7		359.4		10		11393	
+1.	800	19176	simple greedy		11461.9		105.4		10		11476	12078
+			semi greedy		11376		134.1		10		11416	
+
+
+
+			simple rand		11340.4		485.8		5		11404	
+2.	800	19176	simple greedy		11405.2		100.4		5		11412	12084
+			semi greedy		11368.8		120.4		5		11403		
+
+
+
+			simple rand		11344.2		482.4		5		11396	
+3.	800	19176	simple greedy		11324.2		38.8		5		11337	12077
+			semi greedy		11333.4		102		5		11358		
+
+
+
+			simple rand		42015.9		677.1		10		42170	
+4.	800	19176	simple greedy		42045.4		89		10		42077	
+			semi greedy		42013.2		204.1		10		42143	
+
+
+
+			simple rand		52052.4		659.4		10		52179	
+5.	800	19176	simple greedy		52286.2		116		10		52291	
+			semi greedy		52042.1		196.9		10		52167	
+
+
+
+			simple rand		41874.7		721.3		10		42004	
+6.	800	19176	simple greedy		42003		131.5		10		42012	
+			semi greedy		41868.4		211.7		10		42017	
+
+
+
+			simple rand		32100.7		792.9		10		32384	
+7.	800	19176	simple greedy		32131.4		134.8		10		32133	
+			semi greedy		32165.2		224.8		10		32290	
+
+
+
+			simple rand		23408.1		938.1		10		23627	
+8.	800	19176	simple greedy		23459		202.6		10		23523	
+			semi greedy		23368		259		10		23574	
+
+
+
+			simple rand		15772.8		900.6		10		15952	
+9.	800	19176	simple greedy		16221.4		173.2		10		16248	
+			semi greedy		15753.7		289.1		10		16015	
+
+
+
+			simple rand		8929.4		669.1		10		9234	
+10.	800	19176	simple greedy		8817		155.7		10		8873	
+			semi greedy		8982.6		205.3		10		9211	
+
+
+
+			simple rand		422.4		161.6		5		426	
+11.	800	1600	simple greedy		498		2		5		498	627
+			semi greedy		467.6		15.2		5		476		
+
+
+
+			simple rand		412		185.2		5		426	
+12.	800	1600	simple greedy		480		2		5		480	621
+			semi greedy		451.2		13		5		460		
+
+
+
+			simple rand		449		174.1		10		476	
+13.	800	1600	simple greedy		524		2		10		524	645
+			semi greedy		475.2		14.3		10		496		
+
+
+
+			simple rand		13166.7		778.5		10		13491	
+14.	800	4694	simple greedy		13420.2		171.4		10		13503	
+			semi greedy		13235		242.8		10		13583	
+
+
+
+			simple rand		17087.7		793		10		17608	
+15.	800	4661	simple greedy		17296.6		141.5		10		17543	
+			semi greedy		17013.8		234.3		10		17521	
+
+
+
+			simple rand		20866.5		921.9		10		21194	
+16.	800	4672	simple greedy		20580.8		161.8		10		20744	
+			semi greedy		20796.3		226		10		20992	
+
+
+
+			simple rand		24497.2		916.8		10		24832	
+17.	800	4667	simple greedy		24567.5		179.5		10		24678	
+			semi greedy		24489.3		275.7		10		24707	
+
+
+
+			simple rand		20695.2		900.6		10		20974	
+18.	800	4694	simple greedy		20713		175.8		10		20777	
+			semi greedy		20656.7		237.7		10		20976	
+
+
+
+			simple rand		743.2		279.6		5		761	
+19.	800	4661	simple greedy		804		41		5		804	
+			semi greedy		767.8		48.6		5		800	
+
+
+
+			simple rand		1119		273.2		5		1178	
+20.	800	4672	simple greedy		1164		36		5		1168	
+			semi greedy		1115.4		54.8		5		1166	
+
+
+
+			simple rand		1414.4		398.8		5		1482	
+21.	800	4667	simple greedy		1523.2		58		5		1526	
+			semi greedy		1417.2		77.4		5		1444	
+
+
+
+			simple rand		13643.6		1165.4		5		13667	
+22.	2000	19990	simple greedy		13758		116		5		13758	
+			semi greedy		13684.6		221.8		5		13701	
+
+
+
+			simple rand		24856		934		5		24945	
+23.	2000	19990	simple greedy		24874		101		5		24874	
+			semi greedy		24892.4		252.6		5		24939	
+
+
+
+			simple rand		35763.2		1143.8		5		35846	
+24.	2000	19990	simple greedy		35899		178.4		5		35915	
+			semi greedy		35744.2		259.6		5		35824	
+
+
+
+			simple rand		46618		1482		5		46852	
+25.	2000	19990	simple greedy		46757.6		200.4		5		46775	
+			semi greedy		46713.2		377		5		46769	
+
+
+
+			simple rand		57447.8		1357.4		5		57616	
+26.	2000	19990	simple greedy		57568.6		179		5		57667	
+			semi greedy		57488.6		414		5		57617	
+
+
+
+			simple rand		48797.6		2227		5		48963	
+27.	2000	19990	simple greedy		48930.2		272.8		5		48935	
+			semi greedy		48811		395.2		5		48855	
+
+
+
+			simple rand		39866.6		1735.2		5		40204	
+28.	2000	19990	simple greedy		40182		368.6		5		40214	
+			semi greedy		39858.2		492.6		5		40056	
+
+
+
+			simple rand		31344		2107.4		5		31637	
+29.	2000	19990	simple greedy		31297.6		343.8		5		31314	
+			semi greedy		31131.4		430		5		31323	
+
+
+
+			simple rand		22538.4		1498.6		5		22680	
+30.	2000	19990	simple greedy		22755.6		226.8		5		22784	
+			semi greedy		22546.6		422.8		5		22932	
+
+
+
+			simple rand		13623.6		1463.6		5		13942	
+31.	2000	19990	simple greedy		13999.4		323		5		14023	
+			semi greedy		13860.8		416.2		5		14277	
+
+
+
+			simple rand		13902		1781.8		5		14257	
+32.	2000	4000	simple greedy		13993.8		303.8		5		14093	
+			semi greedy		13990.6		433.6		5		14254	
+
+
+
+			simple rand		14109.6		1769.6		5		14421	
+33.	2000	4000	simple greedy		14308.2		268		5		14317	
+			semi greedy		14101.2		442.4		5		14377	
+
+
+
+			simple rand		14351.8		1842.6		5		14527	
+34.	2000	4000	simple greedy		14456.4		258		5		14535	
+			semi greedy		14215.4		478.6		5		14437	
+
+
+
+			simple rand		7318.4		512.2		5		7329	
+35.	2000	11778	simple greedy		7481.6		36.2		5		7482	
+			semi greedy		7399.2		85.8		5		7421	
+
+
+
+			simple rand		14122.4		728		5		14144	
+36.	2000	11766	simple greedy		14228.6		57.6		5		14229	
+			semi greedy		14171.8		150.4		5		14181	
+
+
+
+			simple rand		20725.2		899.6		5		20766	
+37.	2000	11785	simple greedy		20802.8		72		5		20813	
+			semi greedy		20747.6		190.6		5		20780	
+
+
+
+			simple rand		27209.8		1022.4		5		27280	
+38.	2000	11779	simple greedy		27194.2		111.8		5		27220	
+			semi greedy		27207.8		209.2		5		27256	
+
+
+
+			simple rand		22757.2		1114.2		5		22899	
+39.	2000	11778	simple greedy		22865.4		99.4		5		22867	
+			semi greedy		22841.6		252.2		5		22944	
+
+
+
+			simple rand		18061.8		1159.8		5		18204	
+40.	2000	11766	simple greedy		18193.6		149.4		5		18198	
+			semi greedy		18068.2		242.6		5		18100	
+
+
+
+			simple rand		13463.8		1227.4		5		13633	
+41.	2000	11785	simple greedy		13490		173.6		5		13510	
+			semi greedy		13408.2		241		5		13483	
+
+
+
+			simple rand		8869.6		1125.6		5		9118	
+42.	2000	11779	simple greedy		8966.6		192.4		5		8999	
+			semi greedy		9023.8		218.4		5		9143	
+
+
+
+			simple rand		11400.2		651		5		11926	
+43.	1000	9990	simple greedy		11441.8		286.2		5		11488	
+			semi greedy		11322.4		324		5		11543	
+
+
+
+			simple rand		17299.2		793		5		17385	
+44.	1000	9990	simple greedy		17127.2		278.6		5		17236	
+			semi greedy		17201.4		369.2		5		17322	
+
+
+
+			simple rand		22847.2		942.4		5		23037	
+45.	1000	9990	simple greedy		23014.6		297.8		5		23019	
+			semi greedy		22720		305.6		5		22933	
+
+
+
+			simple rand		28500.2		840.8		5		28792	
+46.	1000	9990	simple greedy		28570.4		259.6		5		28595	
+			semi greedy		28640.4		407.2		5		28743	
+
+
+
+			simple rand		34259.6		769		5		34414	
+47.	1000	9990	simple greedy		37250		302.2		5		37350	
+			semi greedy		34807.6		343.8		5		35089	
+
+
+
+			simple rand		5010		813.8		5		5100	
+48.	3000	6000	simple greedy		6000		0		5		6000	6000
+			semi greedy		5191.6		61.8		5		5242	
+
+
+
+			simple rand		5005.6		824		5		5044	
+49.`	3000	6000	simple greedy		6000		0		5		6000	6000
+			semi greedy		5223.2		67.8		5		5302	
+
+
+
+			simple rand		4972		786.2		5		5112	
+50.	3000	6000	simple greedy		5880		0		5		5880	5988
+			semi greedy		5204.8		61.2		5		5230		
+
+
+
+			simple rand		41604.2		601.4		5		41774	
+51.	1000	5909	simple greedy		44385.6		274.2		5		44600	
+			semi greedy		42364.4		425.4		5		42556	
+
+
+
+			simple rand		45481		921.2		5		45935	
+52.	1000	5916	simple greedy		48105.8		248.6		5		48319	
+			semi greedy		45893.8		356.6		5		46085	
+
+
+
+			simple rand		48820		452		5		49122	
+53.	1000	5914	simple greedy		51716.8		357.2		5		52058	
+			semi greedy		49571.2		375.4		5		49814	
+
+
+
+			simple rand		52374.4		442		5		52488	
+54.	1000	5916	simple greedy		55397.6		309		5		55651	
+			semi greedy		53194.8		482		5		53576	
+
